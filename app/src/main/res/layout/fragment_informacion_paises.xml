@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragmentInformacion"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/informacion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+    <TextView
+        android:id="@+id/text_country_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Country Name"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/image_country_flag"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"></ImageView>
+
+    <TextView
+        android:id="@+id/text_region"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Region: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_continent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Continent: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_population"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Population: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_languages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Languages: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_timezones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Timezones: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_latlng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coordinates: "
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/text_currencies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Currencies: "
+        android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/buttonVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Volver"
+            android:layout_gravity="center"></Button>
+
+</LinearLayout>
+
+
+
+</LinearLayout>

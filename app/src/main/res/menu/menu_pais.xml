@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Inicio"
+        android:id="@+id/inicio"
+        android:icon="@android:drawable/ic_menu_info_details">
+    </item>
+
+    <item
+        android:title="Lista de paises"
+        android:id="@+id/listaPaises"
+        android:icon="@android:drawable/ic_menu_info_details">
+    </item>
+
+    <item
+        android:title="Configuracion"
+        android:id="@+id/configuracion"
+        android:icon="@android:drawable/ic_menu_info_details">
+    </item>
+
+    <item
+        android:title="Ayuda"
+        android:id="@+id/ayuda"
+        android:icon="@android:drawable/ic_menu_help">
+    </item>
+
+    <item
+        android:title="Cerrar sesion"
+        android:id="@+id/cerrarSesion"
+        android:icon="@android:drawable/ic_menu_help">
+    </item>
+
+</menu>
