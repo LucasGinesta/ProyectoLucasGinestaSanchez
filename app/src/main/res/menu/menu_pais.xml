@@ -8,27 +8,9 @@
     </item>
 
     <item
-        android:title="Lista de paises"
-        android:id="@+id/listaPaises"
-        android:icon="@android:drawable/ic_menu_info_details">
-    </item>
-
-    <item
-        android:title="Configuracion"
-        android:id="@+id/configuracion"
-        android:icon="@android:drawable/ic_menu_info_details">
-    </item>
-
-    <item
-        android:title="Ayuda"
-        android:id="@+id/ayuda"
-        android:icon="@android:drawable/ic_menu_help">
-    </item>
-
-    <item
-        android:title="Cerrar sesion"
-        android:id="@+id/cerrarSesion"
-        android:icon="@android:drawable/ic_menu_help">
+        android:title="Salir"
+        android:id="@+id/salir"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel">
     </item>
 
 </menu>

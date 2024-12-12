@@ -25,12 +25,13 @@
                 android:background="#4CAF50"
                 app:title="REST Countries">
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/search_view"
-                android:layout_gravity="end"
-                android:layout_marginRight="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"></androidx.appcompat.widget.SearchView>
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_view"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:iconifiedByDefault="true"></androidx.appcompat.widget.SearchView>
             </androidx.appcompat.widget.Toolbar>
 
             <com.google.android.material.tabs.TabLayout
@@ -63,7 +64,7 @@
         android:layout_gravity="start"
         app:menu="@menu/menu_pais"
         app:headerLayout="@layout/header_pais">
-        </com.google.android.material.navigation.NavigationView>
+    </com.google.android.material.navigation.NavigationView>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

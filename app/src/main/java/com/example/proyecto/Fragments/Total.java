@@ -2,8 +2,6 @@ package com.example.proyecto.Fragments;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -24,17 +22,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Fragmento que muestra la lista de países de América utilizando un RecyclerView.
+ * Fragmento que muestra la lista de todos los países utilizando un RecyclerView.
  * Este fragmento obtiene la lista de países desde el ViewModel y la muestra en la interfaz.
  */
-public class America extends Fragment {
+public class Total extends Fragment {
 
     private RecyclerView recyclerView;
     private AdaptadorPaises adaptadorPaises;
-    private List<PaisesModel> paisesAmerica;
+    private PaisesViewModel paisesViewModel;
+    private List<PaisesModel> paisesList;
 
-    // Constructor vacío
-    public America() {
+    // Constructor vacío requerido por el sistema para crear el fragmento
+    public Total() {
     }
 
     /**
@@ -46,29 +45,32 @@ public class America extends Fragment {
      * @param savedInstanceState El estado guardado previamente.
      * @return La vista inflada del fragmento.
      */
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_america, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_todos, container, false);
 
         // Configurar RecyclerView
-        recyclerView = view.findViewById(R.id.recyclerAmerica);
+        recyclerView = view.findViewById(R.id.recyclerTodos);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        // Obtener el ViewModel que contiene la lista de países
+        paisesViewModel = new ViewModelProvider(this).get(PaisesViewModel.class);
 
         // Obtener datos desde el ViewModel
         PaisesViewModel viewModel = new ViewModelProvider(requireActivity()).get(PaisesViewModel.class);
-        viewModel.getPaisesAmerica().observe(getViewLifecycleOwner(), paises -> {
+        viewModel.getPaisesTotal().observe(getViewLifecycleOwner(), paises -> {
             if (paises != null) {
-                paisesAmerica.clear();
-                paisesAmerica.addAll(paises);
+                paisesList.clear();
+                paisesList.addAll(paises);
                 adaptadorPaises.notifyDataSetChanged();
             }
         });
 
         // Inicializar lista y adaptador
-        paisesAmerica = new ArrayList<>();
-        adaptadorPaises = new AdaptadorPaises(paisesAmerica, country -> {
-            // Llama al método showCountryDetails() de MainActivity cuando un país es seleccionado
+        paisesList = new ArrayList<>();
+        adaptadorPaises = new AdaptadorPaises(paisesList, country -> {
+            // Acción al hacer clic en un país
             if (getActivity() instanceof MainActivity) {
                 ((MainActivity) getActivity()).showCountryDetails(country);
             } else {
@@ -81,28 +83,25 @@ public class America extends Fragment {
     }
 
     /**
-     * Filtra la lista de países de América según el texto de búsqueda proporcionado.
-     * Si el texto de búsqueda está vacío o nulo, se muestra la lista completa.
+     * Filtra la lista de países según el texto de búsqueda proporcionado.
+     * Si el texto de búsqueda está vacío, se muestra la lista completa.
      *
      * @param query El texto que se utilizará para filtrar los países.
      */
     public void findLista(String query) {
         List<PaisesModel> paisesFind = new ArrayList<>();
 
-        // Verifica si la búsqueda no está vacía y paisesList no es nula
-        if (query != null && !query.trim().isEmpty() && paisesAmerica != null) {
-            // Filtra la lista según el query
-            for (PaisesModel pais : paisesAmerica) {
+        // Verifica que la búsqueda no esté vacía y que la lista de países no sea nula
+        if (!query.isEmpty() && paisesList != null) {
+            for (PaisesModel pais : paisesList) {
+                // Filtra la lista de países por el nombre común del país
                 if (pais.getName().getCommon().toLowerCase().contains(query.toLowerCase())) {
                     paisesFind.add(pais);
                 }
             }
-        } else if (paisesAmerica != null) {
-            // Si no hay búsqueda o está vacía, muestra la lista completa
-            paisesFind = new ArrayList<>(paisesAmerica);  // Copia la lista completa
         }
 
-        // Actualiza el adaptador con la lista filtrada o completa
+        // Actualiza el adaptador con la lista filtrada
         adaptadorPaises.updateList(paisesFind);
     }
 }

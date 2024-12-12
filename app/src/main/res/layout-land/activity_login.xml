@@ -12,9 +12,7 @@
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
         android:background="#4CAF50"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,27 +20,25 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="61dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="36dp"
         android:src="@drawable/unnamed"
-        app:layout_constraintBottom_toTopOf="@+id/buttonIniciar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"></ImageView>
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
 
     <Button
         android:id="@+id/buttonIniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="84dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="#4CAF50"
         android:text="INICIAR"
         app:cornerRadius="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSalir"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"></Button>
 
@@ -50,14 +46,16 @@
         android:id="@+id/buttonSalir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="38dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="#4CAF50"
         android:text="SALIR"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonIniciar"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/buttonIniciar"
+        app:layout_constraintVertical_bias="1.0"></Button>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

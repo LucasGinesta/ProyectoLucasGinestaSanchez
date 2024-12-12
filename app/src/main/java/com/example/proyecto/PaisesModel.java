@@ -4,42 +4,59 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Representa el modelo de datos de un país con detalles como nombre, región, población,
+ * idiomas, monedas, etc.
+ */
 public class PaisesModel implements Serializable {
 
     private Name name;
     private String region;
-    private String continent;
+    private List<String> continents; // Lista de continentes
     private int population;
     private Flags flags;
-    private String mapUrl;
     private Map<String, String> languages;
-    private List<String> timezones;
-    private Map<String, Demonym> demonyms; //Demónimos (habitantes del país)
-    private boolean landlocked; //Si el país es sin salida al mar
+    private Map<String, Demonyms> demonyms; // Demónimos por idioma (habitantes del país)
     private double area;
-    private Map<String, Currency> currencies; //Monedas
-    private List<Double> latlng; //Coordenadas geográficas [latitud, longitud]
+    private Map<String, Currency> currencies; // Monedas con detalles
+    private List<Double> latlng; // Coordenadas geográficas [latitud, longitud]
 
-    // Constructor actualizado
-    public PaisesModel(Name name, String region, String continent, int population, Flags flags, String mapUrl,
-                       Map<String, String> languages, List<String> timezones, Map<String, Demonym> demonyms,
-                       boolean landlocked, double area, Map<String, Currency> currencies, List<Double> latlng) {
+    /**
+     * Constructor para crear un objeto PaisesModel con los valores proporcionados.
+     *
+     * @param name Nombre del país.
+     * @param region Región del país.
+     * @param continents Lista de continentes a los que pertenece el país.
+     * @param population Población del país.
+     * @param flags Banderas del país.
+     * @param languages Map de idiomas hablados en el país.
+     * @param demonyms Map de demónimos, diferenciados por género.
+     * @param area Área del país.
+     * @param currencies Map de monedas y sus detalles.
+     * @param latlng Coordenadas geográficas (latitud y longitud).
+     */
+    public PaisesModel(Name name, String region, List<String> continents, int population, Flags flags,
+                       Map<String, String> languages, Map<String, Demonyms> demonyms,
+                       double area, Map<String, Currency> currencies, List<Double> latlng) {
         this.name = name;
         this.region = region;
-        this.continent = continent;
+        this.continents = continents;
         this.population = population;
         this.flags = flags;
-        this.mapUrl = mapUrl;
         this.languages = languages;
-        this.timezones = timezones;
         this.demonyms = demonyms;
-        this.landlocked = landlocked;
         this.area = area;
         this.currencies = currencies;
         this.latlng = latlng;
     }
 
     // Getters y setters
+
+    /**
+     * Obtiene el nombre del país.
+     *
+     * @return Nombre del país.
+     */
     public Name getName() {
         return name;
     }
@@ -48,6 +65,11 @@ public class PaisesModel implements Serializable {
         this.name = name;
     }
 
+    /**
+     * Obtiene la región del país.
+     *
+     * @return Región del país.
+     */
     public String getRegion() {
         return region;
     }
@@ -56,14 +78,24 @@ public class PaisesModel implements Serializable {
         this.region = region;
     }
 
-    public String getContinent() {
-        return continent;
+    /**
+     * Obtiene la lista de continentes a los que pertenece el país.
+     *
+     * @return Lista de continentes.
+     */
+    public List<String> getContinents() {
+        return continents;
     }
 
-    public void setContinent(String continent) {
-        this.continent = continent;
+    public void setContinents(List<String> continents) {
+        this.continents = continents;
     }
 
+    /**
+     * Obtiene la población del país.
+     *
+     * @return Población del país.
+     */
     public int getPopulation() {
         return population;
     }
@@ -72,6 +104,11 @@ public class PaisesModel implements Serializable {
         this.population = population;
     }
 
+    /**
+     * Obtiene las banderas del país.
+     *
+     * @return Banderas del país.
+     */
     public Flags getFlags() {
         return flags;
     }
@@ -80,14 +117,11 @@ public class PaisesModel implements Serializable {
         this.flags = flags;
     }
 
-    public String getMapUrl() {
-        return mapUrl;
-    }
-
-    public void setMapUrl(String mapUrl) {
-        this.mapUrl = mapUrl;
-    }
-
+    /**
+     * Obtiene los idiomas hablados en el país.
+     *
+     * @return Map de idiomas.
+     */
     public Map<String, String> getLanguages() {
         return languages;
     }
@@ -96,30 +130,24 @@ public class PaisesModel implements Serializable {
         this.languages = languages;
     }
 
-    public List<String> getTimezones() {
-        return timezones;
-    }
-
-    public void setTimezones(List<String> timezones) {
-        this.timezones = timezones;
-    }
-
-    public Map<String, Demonym> getDemonyms() {
+    /**
+     * Obtiene los demónimos del país.
+     *
+     * @return Map de demónimos por idioma.
+     */
+    public Map<String, Demonyms> getDemonyms() {
         return demonyms;
     }
 
-    public void setDemonyms(Map<String, Demonym> demonyms) {
+    public void setDemonyms(Map<String, Demonyms> demonyms) {
         this.demonyms = demonyms;
     }
 
-    public boolean isLandlocked() {
-        return landlocked;
-    }
-
-    public void setLandlocked(boolean landlocked) {
-        this.landlocked = landlocked;
-    }
-
+    /**
+     * Obtiene el área del país.
+     *
+     * @return Área del país.
+     */
     public double getArea() {
         return area;
     }
@@ -128,6 +156,11 @@ public class PaisesModel implements Serializable {
         this.area = area;
     }
 
+    /**
+     * Obtiene las monedas utilizadas en el país.
+     *
+     * @return Map de monedas.
+     */
     public Map<String, Currency> getCurrencies() {
         return currencies;
     }
@@ -136,6 +169,11 @@ public class PaisesModel implements Serializable {
         this.currencies = currencies;
     }
 
+    /**
+     * Obtiene las coordenadas geográficas del país (latitud y longitud).
+     *
+     * @return Lista con las coordenadas geográficas [latitud, longitud].
+     */
     public List<Double> getLatlng() {
         return latlng;
     }
@@ -144,11 +182,19 @@ public class PaisesModel implements Serializable {
         this.latlng = latlng;
     }
 
-    // Clases internas
+    /**
+     * Representa una moneda con su nombre y símbolo.
+     */
     public static class Currency {
         private String name;
         private String symbol;
 
+        /**
+         * Constructor para crear un objeto Currency con los valores proporcionados.
+         *
+         * @param name Nombre de la moneda.
+         * @param symbol Símbolo de la moneda.
+         */
         public Currency(String name, String symbol) {
             this.name = name;
             this.symbol = symbol;
@@ -169,29 +215,59 @@ public class PaisesModel implements Serializable {
         public void setSymbol(String symbol) {
             this.symbol = symbol;
         }
-    }
 
-    public static class Demonym {
-        private String male;
-        private String female;
-
-        public String getMale() {
-            return male;
-        }
-
-        public String getFemale() {
-            return female;
-        }
-
-        public void setMale(String male) {
-            this.male = male;
-        }
-
-        public void setFemale(String female) {
-            this.female = female;
+        @Override
+        public String toString() {
+            return "Currency{\n" +
+                    "name='" + name + '\'' +
+                    ", \nsymbol='" + symbol + '\'' +
+                    '}';
         }
     }
 
+    /**
+     * Representa los demónimos de un país, con forma femenina y masculina.
+     */
+    public static class Demonyms {
+        private String f; // Forma femenina
+        private String m; // Forma masculina
+
+        /**
+         * Constructor para crear un objeto Demonyms con las formas femenina y masculina.
+         *
+         * @param f Forma femenina del demónimo.
+         * @param m Forma masculina del demónimo.
+         */
+        public Demonyms(String f, String m) {
+            this.f = f;
+            this.m = m;
+        }
+
+        public String getF() {
+            return f;
+        }
+
+        public void setF(String f) {
+            this.f = f;
+        }
+
+        public String getM() {
+            return m;
+        }
+
+        public void setM(String m) {
+            this.m = m;
+        }
+
+        @Override
+        public String toString() {
+            return "Demonyms{\nf='" + f + "', \nm='" + m + "\n'}";
+        }
+    }
+
+    /**
+     * Representa el nombre del país, tanto común como oficial.
+     */
     public static class Name {
         private String common;
         private String official;
@@ -213,6 +289,9 @@ public class PaisesModel implements Serializable {
         }
     }
 
+    /**
+     * Representa la bandera de un país.
+     */
     public static class Flags {
         private String png;
 
