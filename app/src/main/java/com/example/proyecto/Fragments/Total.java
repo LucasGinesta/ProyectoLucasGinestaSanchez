@@ -32,7 +32,10 @@ public class Total extends Fragment {
     private PaisesViewModel paisesViewModel;
     private List<PaisesModel> paisesList;
 
-    // Constructor vacío requerido por el sistema para crear el fragmento
+    /**
+     * Instantiates a new Total.
+     */
+// Constructor vacío requerido por el sistema para crear el fragmento
     public Total() {
     }
 

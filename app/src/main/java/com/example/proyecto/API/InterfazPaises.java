@@ -16,9 +16,7 @@ public interface InterfazPaises {
     /**
      * Obtiene la lista de países con los datos de interés desde la API.
      *
-     * @return Un objeto {@link Call} que puede usarse para obtener la lista de países con información como nombre,
-     *         capital, monedas, banderas, población, continentes, región, zonas horarias, área, coordenadas,
-     *         idiomas, gentilicios y continentes.
+     * @return Un objeto {@link Call} que puede usarse para obtener la lista de países con información como nombre, capital, monedas, banderas, población, continentes, región, zonas horarias, área, coordenadas,         idiomas, gentilicios y continentes.
      */
     @GET("all?fields=name,capital,currencies,flags,population,continents,region,timezones,area,latlng,languages,demonyms,continents")
     Call<List<PaisesModel>> getPaises();

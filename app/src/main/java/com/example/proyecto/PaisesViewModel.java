@@ -35,11 +35,15 @@ public class PaisesViewModel extends AndroidViewModel {
     private MutableLiveData<List<PaisesModel>> paisesOceania;
     private MutableLiveData<List<PaisesModel>> paisesAntartida;
 
-    // Executor para ejecutar tareas en un hilo secundario.
+    /**
+     * The Executor.
+     */
+// Executor para ejecutar tareas en un hilo secundario.
     Executor executor;
 
     /**
      * Constructor que inicializa los LiveData y el Executor.
+     *
      * @param application La aplicación que se usa para inicializar el ViewModel.
      */
     public PaisesViewModel(@NonNull Application application) {
@@ -63,6 +67,7 @@ public class PaisesViewModel extends AndroidViewModel {
 
     /**
      * Obtiene los países de todas las regiones.
+     *
      * @return LiveData con la lista de países de todas las regiones.
      */
     public LiveData<List<PaisesModel>> getPaisesTotal() {
@@ -71,6 +76,7 @@ public class PaisesViewModel extends AndroidViewModel {
 
     /**
      * Obtiene los países de la región de Europa.
+     *
      * @return LiveData con la lista de países de Europa.
      */
     public LiveData<List<PaisesModel>> getPaisesEuropa() {
@@ -79,6 +85,7 @@ public class PaisesViewModel extends AndroidViewModel {
 
     /**
      * Obtiene los países de la región de África.
+     *
      * @return LiveData con la lista de países de África.
      */
     public LiveData<List<PaisesModel>> getPaisesAfrica() {
@@ -87,6 +94,7 @@ public class PaisesViewModel extends AndroidViewModel {
 
     /**
      * Obtiene los países de la región de Asia.
+     *
      * @return LiveData con la lista de países de Asia.
      */
     public LiveData<List<PaisesModel>> getPaisesAsia() {
@@ -95,6 +103,7 @@ public class PaisesViewModel extends AndroidViewModel {
 
     /**
      * Obtiene los países de la región de América.
+     *
      * @return LiveData con la lista de países de América.
      */
     public LiveData<List<PaisesModel>> getPaisesAmerica() {
@@ -103,6 +112,7 @@ public class PaisesViewModel extends AndroidViewModel {
 
     /**
      * Obtiene los países de la región de Oceanía.
+     *
      * @return LiveData con la lista de países de Oceanía.
      */
     public LiveData<List<PaisesModel>> getPaisesOceania() {
@@ -111,6 +121,7 @@ public class PaisesViewModel extends AndroidViewModel {
 
     /**
      * Obtiene los países de la región de la Antártida.
+     *
      * @return LiveData con la lista de países de la Antártida.
      */
     public LiveData<List<PaisesModel>> getPaisesAntartida() {

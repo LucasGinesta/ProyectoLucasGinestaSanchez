@@ -34,7 +34,10 @@ public class Asia extends Fragment {
     private AdaptadorPaises adaptadorPaises;
     private List<PaisesModel> paisesAsia;
 
-    // Constructor vacío
+    /**
+     * Instantiates a new Asia.
+     */
+// Constructor vacío
     public Asia() {
     }
 

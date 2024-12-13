@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("org.jetbrains.dokka") version "1.9.0"
 }
 
 android {
@@ -53,4 +54,25 @@ dependencies {
     implementation ("com.google.code.gson:gson:2.10")
     implementation ("com.github.bumptech.glide:glide:4.15.1")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
+
+
+}
+
+tasks.dokkaJavadoc.configure{
+    outputDirectory.set(File(".").resolve("docs"))
+
+    dokkaSourceSets{
+        create("main"){
+            displayName.set("Android Project Documentation")
+            sourceRoots.from(
+                file("src/main/java"),
+            )
+            platform.set(org.jetbrains.dokka.Platform.jvm)
+            classpath.from(
+                files(android.bootClasspath),
+                configurations["debugCompileClasspath"],
+                configurations["releaseCompileClasspath"]
+            )
+        }
+    }
 }

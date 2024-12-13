@@ -30,7 +30,7 @@ public class AdaptadorPaises extends RecyclerView.Adapter<AdaptadorPaises.Paises
     /**
      * Constructor para inicializar el adaptador con la lista de países y el listener para los clics.
      *
-     * @param paises Lista de países a mostrar.
+     * @param paises   Lista de países a mostrar.
      * @param listener Listener para gestionar los clics en los elementos.
      */
     public AdaptadorPaises(List<PaisesModel> paises, OnItemClickListener listener) {
@@ -100,7 +100,13 @@ public class AdaptadorPaises extends RecyclerView.Adapter<AdaptadorPaises.Paises
      * ViewHolder que contiene las vistas de cada ítem (nombre y bandera).
      */
     public static class PaisesViewHolder extends RecyclerView.ViewHolder {
+        /**
+         * The Name text view.
+         */
         TextView nameTextView;
+        /**
+         * The Flag image view.
+         */
         ImageView flagImageView;
 
         /**

@@ -33,7 +33,10 @@ public class Antartida extends Fragment {
     private AdaptadorPaises adaptadorPaises;
     private List<PaisesModel> paisesAntartida;
 
-    // Constructor vacío
+    /**
+     * Instantiates a new Antartida.
+     */
+// Constructor vacío
     public Antartida() {
     }
 

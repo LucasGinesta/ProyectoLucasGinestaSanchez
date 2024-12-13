@@ -33,7 +33,10 @@ public class Europa extends Fragment {
     private AdaptadorPaises adaptadorPaises;
     private List<PaisesModel> paisesEuropa;
 
-    // Constructor vacío
+    /**
+     * Instantiates a new Europa.
+     */
+// Constructor vacío
     public Europa() {
     }
 

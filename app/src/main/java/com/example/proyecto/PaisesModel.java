@@ -24,16 +24,16 @@ public class PaisesModel implements Serializable {
     /**
      * Constructor para crear un objeto PaisesModel con los valores proporcionados.
      *
-     * @param name Nombre del país.
-     * @param region Región del país.
+     * @param name       Nombre del país.
+     * @param region     Región del país.
      * @param continents Lista de continentes a los que pertenece el país.
      * @param population Población del país.
-     * @param flags Banderas del país.
-     * @param languages Map de idiomas hablados en el país.
-     * @param demonyms Map de demónimos, diferenciados por género.
-     * @param area Área del país.
+     * @param flags      Banderas del país.
+     * @param languages  Map de idiomas hablados en el país.
+     * @param demonyms   Map de demónimos, diferenciados por género.
+     * @param area       Área del país.
      * @param currencies Map de monedas y sus detalles.
-     * @param latlng Coordenadas geográficas (latitud y longitud).
+     * @param latlng     Coordenadas geográficas (latitud y longitud).
      */
     public PaisesModel(Name name, String region, List<String> continents, int population, Flags flags,
                        Map<String, String> languages, Map<String, Demonyms> demonyms,
@@ -61,6 +61,11 @@ public class PaisesModel implements Serializable {
         return name;
     }
 
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
     public void setName(Name name) {
         this.name = name;
     }
@@ -74,6 +79,11 @@ public class PaisesModel implements Serializable {
         return region;
     }
 
+    /**
+     * Sets region.
+     *
+     * @param region the region
+     */
     public void setRegion(String region) {
         this.region = region;
     }
@@ -87,6 +97,11 @@ public class PaisesModel implements Serializable {
         return continents;
     }
 
+    /**
+     * Sets continents.
+     *
+     * @param continents the continents
+     */
     public void setContinents(List<String> continents) {
         this.continents = continents;
     }
@@ -100,6 +115,11 @@ public class PaisesModel implements Serializable {
         return population;
     }
 
+    /**
+     * Sets population.
+     *
+     * @param population the population
+     */
     public void setPopulation(int population) {
         this.population = population;
     }
@@ -113,6 +133,11 @@ public class PaisesModel implements Serializable {
         return flags;
     }
 
+    /**
+     * Sets flags.
+     *
+     * @param flags the flags
+     */
     public void setFlags(Flags flags) {
         this.flags = flags;
     }
@@ -126,6 +151,11 @@ public class PaisesModel implements Serializable {
         return languages;
     }
 
+    /**
+     * Sets languages.
+     *
+     * @param languages the languages
+     */
     public void setLanguages(Map<String, String> languages) {
         this.languages = languages;
     }
@@ -139,6 +169,11 @@ public class PaisesModel implements Serializable {
         return demonyms;
     }
 
+    /**
+     * Sets demonyms.
+     *
+     * @param demonyms the demonyms
+     */
     public void setDemonyms(Map<String, Demonyms> demonyms) {
         this.demonyms = demonyms;
     }
@@ -152,6 +187,11 @@ public class PaisesModel implements Serializable {
         return area;
     }
 
+    /**
+     * Sets area.
+     *
+     * @param area the area
+     */
     public void setArea(double area) {
         this.area = area;
     }
@@ -165,6 +205,11 @@ public class PaisesModel implements Serializable {
         return currencies;
     }
 
+    /**
+     * Sets currencies.
+     *
+     * @param currencies the currencies
+     */
     public void setCurrencies(Map<String, Currency> currencies) {
         this.currencies = currencies;
     }
@@ -178,6 +223,11 @@ public class PaisesModel implements Serializable {
         return latlng;
     }
 
+    /**
+     * Sets latlng.
+     *
+     * @param latlng the latlng
+     */
     public void setLatlng(List<Double> latlng) {
         this.latlng = latlng;
     }
@@ -192,7 +242,7 @@ public class PaisesModel implements Serializable {
         /**
          * Constructor para crear un objeto Currency con los valores proporcionados.
          *
-         * @param name Nombre de la moneda.
+         * @param name   Nombre de la moneda.
          * @param symbol Símbolo de la moneda.
          */
         public Currency(String name, String symbol) {
@@ -200,18 +250,38 @@ public class PaisesModel implements Serializable {
             this.symbol = symbol;
         }
 
+        /**
+         * Gets name.
+         *
+         * @return the name
+         */
         public String getName() {
             return name;
         }
 
+        /**
+         * Sets name.
+         *
+         * @param name the name
+         */
         public void setName(String name) {
             this.name = name;
         }
 
+        /**
+         * Gets symbol.
+         *
+         * @return the symbol
+         */
         public String getSymbol() {
             return symbol;
         }
 
+        /**
+         * Sets symbol.
+         *
+         * @param symbol the symbol
+         */
         public void setSymbol(String symbol) {
             this.symbol = symbol;
         }
@@ -243,18 +313,38 @@ public class PaisesModel implements Serializable {
             this.m = m;
         }
 
+        /**
+         * Gets f.
+         *
+         * @return the f
+         */
         public String getF() {
             return f;
         }
 
+        /**
+         * Sets f.
+         *
+         * @param f the f
+         */
         public void setF(String f) {
             this.f = f;
         }
 
+        /**
+         * Gets m.
+         *
+         * @return the m
+         */
         public String getM() {
             return m;
         }
 
+        /**
+         * Sets m.
+         *
+         * @param m the m
+         */
         public void setM(String m) {
             this.m = m;
         }
@@ -272,18 +362,38 @@ public class PaisesModel implements Serializable {
         private String common;
         private String official;
 
+        /**
+         * Gets common.
+         *
+         * @return the common
+         */
         public String getCommon() {
             return common;
         }
 
+        /**
+         * Gets official.
+         *
+         * @return the official
+         */
         public String getOfficial() {
             return official;
         }
 
+        /**
+         * Sets common.
+         *
+         * @param common the common
+         */
         public void setCommon(String common) {
             this.common = common;
         }
 
+        /**
+         * Sets official.
+         *
+         * @param official the official
+         */
         public void setOfficial(String official) {
             this.official = official;
         }
@@ -295,10 +405,20 @@ public class PaisesModel implements Serializable {
     public static class Flags {
         private String png;
 
+        /**
+         * Gets png.
+         *
+         * @return the png
+         */
         public String getPng() {
             return png;
         }
 
+        /**
+         * Sets png.
+         *
+         * @param png the png
+         */
         public void setPng(String png) {
             this.png = png;
         }

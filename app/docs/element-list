@@ -1,0 +1,13 @@
+$dokka.format:javadoc-v1
+$dokka.linkExtension:html
+$dokka.location:com.example.proyecto.Adapters/AdaptadorPaises.OnItemClickListener///PointingToDeclaration/com/example/proyecto/Adapters/AdaptadorPaises.OnItemClickListener.html
+$dokka.location:com.example.proyecto.Adapters/AdaptadorPaises.PaisesViewHolder///PointingToDeclaration/com/example/proyecto/Adapters/AdaptadorPaises.PaisesViewHolder.html
+$dokka.location:com.example.proyecto/PaisesModel.Currency///PointingToDeclaration/com/example/proyecto/PaisesModel.Currency.html
+$dokka.location:com.example.proyecto/PaisesModel.Demonyms///PointingToDeclaration/com/example/proyecto/PaisesModel.Demonyms.html
+$dokka.location:com.example.proyecto/PaisesModel.Flags///PointingToDeclaration/com/example/proyecto/PaisesModel.Flags.html
+$dokka.location:com.example.proyecto/PaisesModel.Name///PointingToDeclaration/com/example/proyecto/PaisesModel.Name.html
+com.example.proyecto
+com.example.proyecto.API
+com.example.proyecto.Adapters
+com.example.proyecto.Fragments
+
